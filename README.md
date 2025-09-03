@@ -19,7 +19,7 @@ This project documents how I designed and implemented secure access controls for
 **Before**: Subnet1-1 had direct outbound access to the internet and broad internal access.  
 **After**: All egress from Subnet1-1 traversed **Azure Firewall**; only a specific destination (`131.107.3.210:9000`) was allowed. Internal access to the database tier was restricted to members of an ASG over **TCP/1433**. A new VNet (North Europe) was peered to the existing hub/workload VNet, and a Private DNS zone enabled name-based connectivity.
 
-
+```
       (Internet)
           ^
           | (only 131.107.3.210:9000 allowed)
@@ -47,7 +47,7 @@ This project documents how I designed and implemented secure access controls for
          Private DNS zone: contoso.com (linked to VNet2 and VNet-VM4)
 
 
-
+```
 
 
 ---
